@@ -19,7 +19,12 @@
       <div class="items">
         {% for item in items %}
         <div class="single-item">
-          <input type="checkbox" {% if item.completed %}checked{% endif %} />
+          <form method="POST" action="{% url 'grocery:toggle' item.id %}">
+              {% csrf_token %}
+              <input type="checkbox"
+                      {% if item.completed %}checked{% endif %}
+                      onchange="this.form.submit()" />
+          </form>
           <p
             style="text-decoration: {% if item.completed %}line-through{% else %}none{% endif %}"
           >
@@ -38,6 +43,7 @@
         </p>
         {% endfor %}
       </div>
+      
     </section>
   </body>
 </html>
