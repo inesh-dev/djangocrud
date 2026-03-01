@@ -16,14 +16,28 @@
   </head>
   <body>
     <section class="section-center">
-    <form method="POST" action="{% url 'grocery:add' %}">
+ <form method="POST"
+    action="{% if edit_item %}{% url 'grocery:update' edit_item.id %}{% else %}{% url 'grocery:add' %}{% endif %}">
   {% csrf_token %}
   <h2>grocery bud</h2>
   <div class="form-control">
-    <input type="text" name="name" class="form-input" placeholder="e.g. eggs" />
-    <button type="submit" class="btn">add item</button>
+    <input type="text"
+      name="name"
+      class="form-input"
+      placeholder="e.g. eggs"
+      value="{{ edit_item.name|default:'' }}"
+      {% if edit_item %}autofocus{% endif %} 
+    />
+    <button type="submit" class="btn">
+      {% if edit_item %}
+          edit item
+      {% else %}
+          add item
+      {% endif %}
+    </button>
   </div>
 </form>
+
       <!-- Items List -->
       <div class="items">
         {% for item in items %}
@@ -39,7 +53,7 @@
           >
             {{ item.name }}
           </p>
-          <a href="#" class="btn icon-btn edit-btn">
+          <a href="{% url 'grocery:edit' item.id %}" class="btn icon-btn edit-btn">
             <i class="fa-regular fa-pen-to-square"></i>
           </a>
           <form
