@@ -7,35 +7,38 @@
 }
 
 body {
-  background: #eee;
-  font-family: Helvetica, sans-serif;
+  background: #f5f5f5;
+  font-family: system-ui, -apple-system, sans-serif;
   font-weight: 400;
-  line-height: 1.2;
-  color: #222;
+  line-height: 1.5;
+  color: #111;
 }
 
 .section-center {
   margin: 0 auto;
-  margin-top: 8rem;
-  max-width: 30rem;
+  margin-top: 4rem;
+  max-width: 28rem;
   background: #fff;
-  border-radius: 0.25rem;
   padding: 2rem;
-  position: relative;
+  border: 1px solid #e0e0e0;
 }
+
 .alert {
   padding: 0.75rem 1rem;
   margin-bottom: 1rem;
-  border-radius: 0.25rem;
   text-align: center;
+  border: 1px solid #ddd;
+  background: #fafafa;
 }
 
 .alert-success {
-  background: #d1fae5;
-  color: #065f46;
+  background: #fafafa;
+  color: #111;
+  border-color: #ccc;
 }
 
 .alert-error {
-  background: #fee2e2;
-  color: #991b1b;
+  background: #fafafa;
+  color: #111;
+  border-color: #999;
 }
