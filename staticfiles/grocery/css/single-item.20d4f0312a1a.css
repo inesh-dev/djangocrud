@@ -1,0 +1,61 @@
+.single-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  column-gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.single-item:last-child {
+  border-bottom: none;
+}
+
+.single-item p {
+  font-size: 0.9375rem;
+  color: #111;
+}
+
+.single-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 1rem;
+  height: 1rem;
+  accent-color: #2563eb;
+}
+
+.single-item .btn {
+  cursor: pointer;
+  color: #111;
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 0.35rem 0.5rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-item .btn:hover {
+  border-color: #111;
+  background: #f5f5f5;
+}
+
+.single-item .edit-btn {
+  color: #666;
+}
+
+.single-item .edit-btn:hover {
+  color: #111;
+}
+
+.single-item .remove-btn {
+  border-color: #ccc;
+  color: #666;
+}
+
+.single-item .remove-btn:hover {
+  border-color: #111;
+  color: #111;
+  background: #f5f5f5;
+}
